@@ -5,7 +5,7 @@ using namespace std;
 
 int main() 
 {
-    cout << "Enter a word: ";
+    cout << "Enter a combination of \"ff\", \"fl\", and \"fi\": ";
 
     // Input
     string word;
@@ -40,7 +40,6 @@ int main()
     cout << "ff: " << ff_count << endl;
     cout << "fl: " << fl_count << endl;
     cout << "fi: " << fi_count << endl;
-
 
     return 0;
 }
