@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -12,24 +11,24 @@ int main()
 
 	// Take in user input
 	cout << "Enter a series of words: ";
-	while (cin >> input)
+	while (getline(cin, input))
 	{
-		for (int i = word_vec.size(); i > 0;)
+		cout << "received" << endl;
+		// Compare element to previous element
+		if (!word_vec.empty() && input == word_vec[word_vec.size()]) 
 		{
-			// Compare element to previous element
-			if (input == word_vec[i]) 
-			{
-				cout << "Duplicate encountered: " << input << endl;
-				break;
-			}
-			else
-			{
-				// Add to vector
-				word_vec.push_back(input);
-			}	
+			cout << "Duplicate encountered: " << input << endl;
+			break;
 		}
+		else
+		{
+			// Add to vector
+			cout << "No duplicated found" << endl;
+			word_vec.push_back(input);
+		}	
+		cout << "received" << endl;
 	}
 
-	cout << "Done" << endl;
+	cout << "Program done" << endl;
 	return 0; 
 }
